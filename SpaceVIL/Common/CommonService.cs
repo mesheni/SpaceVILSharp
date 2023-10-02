@@ -137,6 +137,9 @@ namespace SpaceVIL.Common
             return true;
         }
 
+        /// <summary>
+        /// Создание потока и запуск через каждые 5 секунд сборщика мусора.
+        /// </summary>
         private static void RunCG()
         {
             Thread freeMemoryThread = new Thread(() =>
