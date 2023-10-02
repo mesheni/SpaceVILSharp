@@ -149,7 +149,7 @@ namespace SpaceVIL.Common
                     Thread.Sleep(5000);
                     Console.WriteLine("Run Garbage Collector");
                     System.GC.Collect();
-                    GC.WaitForPendingFinalizers();
+                    GC.WaitForPendingFinalizers(); // Ждем завершения финализации объектов
                 }
             });
             freeMemoryThread.IsBackground = true;
@@ -157,7 +157,7 @@ namespace SpaceVIL.Common
         }
 
         /// <summary>
-        /// Getting stored text in clipboard.
+        /// Получение сохраненного текста в буфере обмена.
         /// </summary>
         /// <returns>The text as System.String.</returns>
         public static String GetClipboardString()
@@ -183,7 +183,7 @@ namespace SpaceVIL.Common
         }
 
         /// <summary>
-        /// Placing the specified text to the clipboard.
+        /// Помещаем указанный текст в буфер обмена.
         /// </summary>
         /// <param name="text">The text as System.String.</param>
         public static void SetClipboardString(String text)
