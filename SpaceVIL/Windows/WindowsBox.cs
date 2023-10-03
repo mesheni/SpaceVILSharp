@@ -11,15 +11,15 @@ namespace SpaceVIL
     }
 
     /// <summary>
-    /// WindowsBox is a storage-class that provides an access to existing windows by name and Guid.
+    /// WindowsBox is a storage-class that provides an access to existing windows by name and Guid. (WindowsBox - это класс хранилища, который предоставляет доступ к существующим окнам по имени и Guid.)
     /// </summary>
     public static class WindowsBox
     {
         /// <summary>
-        /// Trying to show a window by its GUID.
+        /// Trying to show a window by its GUID. (Пытаюсь отобразить окно по его GUID.)
         /// </summary>
         /// <param name="guid">GUID of the window.</param>
-        /// <returns>True: if window with such GUID is exist. False: if window with such GUID is not exist.</returns>
+        /// <returns>True: if window with such GUID is exist. False: if window with such GUID is not exist. (True: если окно с таким GUID существует. False: если окно с таким GUID не существует.)</returns>
         public static bool TryShow(Guid guid)
         {
             CoreWindow wnd = WindowsBox.GetWindowInstance(guid);
@@ -32,10 +32,10 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Trying to show a window by its name.
+        /// Trying to show a window by its name. (Пытаюсь отобразить окно по его названию.)
         /// </summary>
         /// <param name="name">Name of the window.</param>
-        /// <returns>True: if window with such name is exist. False: if window with such name is not exist.</returns>
+        /// <returns>True: if window with such name is exist. False: if window with such name is not exist. (True: если окно с таким именем существует. False: если окно с таким именем не существует.)</returns>
         public static bool TryShow(String name)
         {
             CoreWindow wnd = WindowsBox.GetWindowInstance(name);
@@ -48,10 +48,10 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Getting a window instance by its name.
+        /// Getting a window instance by its name. (Получение экземпляра окна по его имени.)
         /// </summary>
         /// <param name="name">Name of the window.</param>
-        /// <returns>CoreWindow link: if window with such name is exist. NULL: if window with such name is not exist.</returns>
+        /// <returns>CoreWindow link: if window with such name is exist. NULL: if window with such name is not exist. (Ссылка на CoreWindow: если окно с таким именем существует. NULL: если окно с таким именем не существует.)</returns>
         public static CoreWindow GetWindowInstance(string name)
         {
             foreach (CoreWindow wnd in windows)
@@ -64,10 +64,10 @@ namespace SpaceVIL
             return null;
         }
         /// <summary>
-        /// Getting a window instance by its GUID.
+        /// Getting a window instance by its GUID. (Получение экземпляра window по его GUID.)
         /// </summary>
-        /// <param name="guid">GUID of the window.</param>
-        /// <returns>CoreWindow link: if window with such GUID is exist. NULL: if window with such GUID is not exist.</returns>
+        /// <param name="guid">GUID окна.</param>
+        /// <returns>CoreWindow link: if window with such GUID is exist. NULL: if window with such GUID is not exist. (Ссылка на CoreWindow: если окно с таким GUID существует. NULL: если окно с таким GUID не существует.)</returns>
         public static CoreWindow GetWindowInstance(Guid guid)
         {
             if (windowsGuid.ContainsKey(guid))
@@ -77,7 +77,7 @@ namespace SpaceVIL
             return null;
         }
         /// <summary>
-        /// Getting the current focused window.
+        /// Getting the current focused window. (Получение текущего сфокусированного окна.)
         /// </summary>
         /// <returns>The current focused window as SpaceVIL.CoreWindow.</returns>
         public static CoreWindow GetCurrentFocusedWindow()
@@ -86,7 +86,7 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Getting the list of existing windows in the application.
+        /// Getting the list of existing windows in the application. (Получение списка существующих окон в приложении.)
         /// </summary>
         /// <returns>The list of existing windows.</returns>
         public static List<String> GetWindowsList()
@@ -102,7 +102,7 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Printing all existing windows in the application.
+        /// Printing all existing windows in the application. (Печать всех существующих окон в приложении.)
         /// </summary>
         public static void PrintStoredWindows()
         {
@@ -128,8 +128,8 @@ namespace SpaceVIL
             windowsGuid.Add(_layout.GetWindowGuid(), _layout);
 
             ItemsLayoutBox.InitLayout(_layout.GetWindowGuid());
-            //add filling frame
-            //ALL ATTRIBUTES STRICTLY NEEDED!!!
+            //add filling frame (добавить заполняющую рамку)
+            //ALL ATTRIBUTES STRICTLY NEEDED!!! (ВСЕ АТРИБУТЫ СТРОГО НЕОБХОДИМЫ!!!)
 
             WContainer container = new WContainer();
             container.SetHandler(_layout);

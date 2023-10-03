@@ -12,15 +12,16 @@ namespace SpaceVIL
     /// <summary>
     /// OpenEntryBox is dialog window for browsing file system 
     /// to select a file or folder to open or save.
-    /// Support create/rename/delete files and folders, navigate shortcuts, file filtering.
+    /// (OpenEntryBox - это диалоговое окно для просмотра файловой системы с целью выбора файла или папки для открытия или сохранения.)
+    /// Support create/rename/delete files and folders, navigate shortcuts, file filtering. (Поддержка создания / переименования / удаления файлов и папок, навигации по ярлыкам, фильтрации файлов.)
     /// </summary>
     public class OpenEntryBox : DialogWindow
     {
         private String _result = null;
         /// <summary>
-        /// Getting full path of selected fyle system entry.
+        /// Getting full path of selected fyle system entry. (Получение полного пути к выбранной записи файловой системы.)
         /// </summary>
-        /// <returns>Full path of selected fyle system entry.</returns>
+        /// <returns>Full path of selected fyle system entry. (Полный путь к выбранной записи файловой системы.)</returns>
         public String GetResult()
         {
             return _result;
@@ -53,16 +54,16 @@ namespace SpaceVIL
         private Bitmap _file = null;
 
         /// <summary>
-        /// Setting the default path that will be opened when OpenEntryBox is shown.
+        /// Setting the default path that will be opened when OpenEntryBox is shown. (Установка пути по умолчанию, который будет открыт при отображении OpenEntryBox.)
         /// </summary>
-        /// <param name="path">Default path to open.</param>
+        /// <param name="path">Default path to open. (Путь по умолчанию для открытия.)</param>
         public void SetDefaultPath(String path)
         {
             _addressLine.SetText(path);
         }
 
         /// <summary>
-        /// Setting a title text of the dialog window.
+        /// Setting a title text of the dialog window. (Установка текста заголовка диалогового окна.)
         /// </summary>
         /// <param name="title">Title text.</param>
         public void SetTitle(String title)
@@ -71,7 +72,7 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Getting a title text of the dialog window.
+        /// Getting a title text of the dialog window. (Получение текста заголовка диалогового окна.)
         /// </summary>
         /// <returns>Title text.</returns>
         public String GetTitle()
@@ -83,7 +84,7 @@ namespace SpaceVIL
         private OpenDialogType _dialogType = OpenDialogType.Open;
 
         /// <summary>
-        /// Constructs OpenEntryBox with title text, entry type and dialog type. 
+        /// Constructs OpenEntryBox with title text, entry type and dialog type. (Создает OpenEntryBox с текстом заголовка, типом записи и типом диалогового окна.)
         /// <para/> Entry type can be FileSystemEntryType.File or FileSystemEntryType.Directory. 
         /// <para/> Dialog type can be OpenDialogType.Open or OpenDialogType.Save.
         /// </summary>
@@ -132,24 +133,24 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Constructs OpenEntryBox with title text, entry type. Dialog type is OpenDialogType.Open.
+        /// Constructs OpenEntryBox with title text, entry type. Dialog type is OpenDialogType.Open. (Создает OpenEntryBox с текстом заголовка, типом записи. Тип диалогового окна - OpenDialogType.Open.)
         /// <para/> Entry type can be FileSystemEntryType.File or FileSystemEntryType.Directory. 
         /// </summary>
         /// <param name="title">Title text.</param>
         /// <param name="entryType">Entry type as SpaceVIL.Core.FileSystemEntryType.</param>
         public OpenEntryBox(String title, FileSystemEntryType entryType) : this(title, entryType, OpenDialogType.Open) { }
-        
+
         /// <summary>
         /// Constructs OpenEntryBox with title text. Entry type is FileSystemEntryType.File. 
-        /// Dialog type is OpenDialogType.Open.
+        /// Dialog type is OpenDialogType.Open. (Создает OpenEntryBox с текстом заголовка. Тип записи - FileSystemEntryType.File. Тип диалогового окна - OpenDialogType.Open.)
         /// </summary>
         /// <param name="title">Title text.</param>
         public OpenEntryBox(String title) : this(title, FileSystemEntryType.File) { }
-        
+
         /// <summary>
-        /// Initializing all elements in the OpenEntryBox.
+        /// Initializing all elements in the OpenEntryBox. (Инициализация всех элементов в OpenEntryBox.)
         /// <para/> Notice: This method is mainly for overriding only. SpaceVIL calls 
-        /// this method if necessary and no need to call it manually.
+        /// this method if necessary and no need to call it manually. (Обратите внимание: Этот метод предназначен в основном только для переопределения. SpaceVIL вызывает этот метод при необходимости, и нет необходимости вызывать его вручную.)
         /// </summary>
         public override void InitWindow()
         {
@@ -418,7 +419,7 @@ namespace SpaceVIL
             if (ind == firstInd)
             {
                 if (ind == -1)
-                { //No such index
+                { //No such index (Такого индекса нет)
                     if (name.Contains("./"))
                     {
                         ind = name.IndexOf("/") + 1;
@@ -466,7 +467,7 @@ namespace SpaceVIL
         }
 
         /// <summary>
-        /// Refresh opened folder.
+        /// Refresh opened folder. (Обновить открытую папку.)
         /// </summary>
         public void RefreshFolder()
         {
@@ -483,7 +484,7 @@ namespace SpaceVIL
         private Dictionary<String, String[]> _extensionFilter = new Dictionary<String, String[]>();
 
         /// <summary>
-        /// Adding file filter extensions. 
+        /// Adding file filter extensions. (Добавление расширений фильтра файлов.)
         /// <para/> Rule: "filter name (*.ext1, *.ext2, *.extN) ; *.ext1, *.ext2, *.extN&quot;
         /// <para/> Example 1: "Text files (*.txt) ; *.txt&quot;
         /// <para/> Example 2: "Images (*.png, *.bmp, *.jpg) ; *.png, *.bmp, *.jpg&quot;
