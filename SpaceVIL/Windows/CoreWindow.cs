@@ -7,7 +7,7 @@ using SpaceVIL.Decorations;
 namespace SpaceVIL
 {
     /// <summary>
-    /// CoreWindow is an abstract class containing an implementation of common functionality for a window.
+    /// CoreWindow абстрактный класс, который содержит в себе функциональность окна.
     /// </summary>
     public abstract class CoreWindow
     {
